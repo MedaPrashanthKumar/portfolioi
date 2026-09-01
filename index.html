@@ -1,0 +1,3963 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meda Prashanth Kumar | Senior Software Engineer | Angular, React, AWS &amp; GenAI</title>
+  
+  <!-- SEO & Open Graph Meta Tags -->
+  <meta name="description" content="Portfolio of Meda Prashanth Kumar, Senior Software Engineer specializing in Angular, React, Node.js, Python FastAPI, AWS serverless, distributed systems, system design, and GenAI / LLM engineering." />
+  <meta name="keywords" content="Meda Prashanth Kumar, Senior Software Engineer, Full Stack Engineer, Angular, React, Node.js, AWS Lambda, Python FastAPI, GenAI, LangChain, LangGraph, Distributed Systems, System Design, PostgreSQL" />
+  <meta name="author" content="Meda Prashanth Kumar" />
+  <meta property="og:title" content="Meda Prashanth Kumar | Senior Software Engineer" />
+  <meta property="og:description" content="5.5+ years designing and scaling distributed systems, modern Angular & React frontends, high-concurrency cloud architectures, and enterprise GenAI workflows." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0a0e17" />
+
+  <!-- Fonts & CDN Icons (Lightweight & High Performance) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    /* ==========================================================================
+       1. CSS VARIABLES & SYSTEM THEMES (ENGINEERING AESTHETIC)
+       ========================================================================== */
+    :root, [data-theme="dark"] {
+      --bg-primary: #070a0f;
+      --bg-secondary: #0d121c;
+      --bg-tertiary: #141c2c;
+      --bg-card: rgba(15, 23, 42, 0.7);
+      --bg-card-hover: rgba(22, 33, 58, 0.85);
+      --bg-glass: rgba(7, 10, 15, 0.8);
+      --bg-glass-card: rgba(15, 23, 42, 0.68);
+      --bg-input: #080c14;
+      --bg-terminal: #05070c;
+      
+      --border-subtle: rgba(240, 246, 252, 0.08);
+      --border-medium: rgba(240, 246, 252, 0.15);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --border-glow: rgba(56, 189, 248, 0.5);
+      
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --text-bright: #ffffff;
+      
+      --accent-cyan: #38bdf8;
+      --accent-blue: #3b82f6;
+      --accent-react: #00d8ff;
+      --accent-angular: #f43f5e;
+      --accent-indigo: #6366f1;
+      --accent-emerald: #10b981;
+      --accent-amber: #fbbf24;
+      --accent-purple: #c084fc;
+      --accent-rose: #f43f5e;
+
+      --gradient-brand: linear-gradient(135deg, #38bdf8 0%, #3b82f6 50%, #818cf8 100%);
+      --gradient-ai: linear-gradient(135deg, #c084fc 0%, #6366f1 50%, #38bdf8 100%);
+      --gradient-card: linear-gradient(180deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.3) 100%);
+      --gradient-glow: radial-gradient(circle at 50% 0%, rgba(56, 189, 248, 0.15), transparent 70%);
+
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --font-display: 'Space Grotesk', var(--font-sans);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45), 0 0 1px rgba(255, 255, 255, 0.08);
+      --shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 1px rgba(255, 255, 255, 0.12);
+      --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.25);
+
+      --transition-fast: 0.15s ease;
+      --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+      --nav-height: 72px;
+      --container-max: 1240px;
+      --grid-line-color: rgba(255, 255, 255, 0.025);
+    }
+
+    /* Light Theme - Crisp, Modern & High-Contrast Tech Aesthetic */
+    [data-theme="light"] {
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-tertiary: #e2e8f0;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f8fafc;
+      --bg-glass: rgba(248, 250, 252, 0.88);
+      --bg-glass-card: rgba(255, 255, 255, 0.92);
+      --bg-input: #ffffff;
+      --bg-terminal: #0f172a;
+      
+      --border-subtle: #e2e8f0;
+      --border-medium: #cbd5e1;
+      --border-accent: rgba(2, 132, 199, 0.45);
+      --border-glow: rgba(2, 132, 199, 0.3);
+      
+      --text-primary: #0f172a;
+      --text-secondary: #334155;
+      --text-muted: #64748b;
+      --text-bright: #020617;
+      
+      --accent-cyan: #0284c7;
+      --accent-blue: #2563eb;
+      --accent-react: #0284c7;
+      --accent-angular: #e11d48;
+      --accent-indigo: #4f46e5;
+      --accent-emerald: #059669;
+      --accent-amber: #d97706;
+      --accent-purple: #7c3aed;
+      --accent-rose: #e11d48;
+
+      --gradient-brand: linear-gradient(135deg, #0284c7 0%, #2563eb 50%, #4f46e5 100%);
+      --gradient-ai: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #0284c7 100%);
+      --gradient-card: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      --gradient-glow: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.12), transparent 70%);
+
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 0 1px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.08), 0 0 1px rgba(0, 0, 0, 0.08);
+      --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.15);
+      --grid-line-color: rgba(15, 23, 42, 0.035);
+    }
+
+    /* ==========================================================================
+       2. RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--nav-height) + 24px);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+      transition: background-color var(--transition-normal), color var(--transition-normal);
+    }
+
+    ::selection {
+      background: rgba(56, 189, 248, 0.3);
+      color: #ffffff;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 2px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      color: inherit;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* Utilities & Layout */
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 100px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      margin-bottom: 56px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-accent);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-bright);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      max-width: 720px;
+      line-height: 1.6;
+    }
+
+    .gradient-text {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-gradient-text {
+      background: var(--gradient-ai);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .mono {
+      font-family: var(--font-mono);
+    }
+
+    /* Background Grid Pattern */
+    .bg-grid-pattern {
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Ambient Dynamic Glows */
+    .ambient-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      opacity: 0.15;
+      z-index: 0;
+    }
+
+    /* ==========================================================================
+       3. NAVIGATION BAR
+       ========================================================================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-height);
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      z-index: 1000;
+      transition: background-color var(--transition-normal), border-color var(--transition-normal);
+    }
+
+    .navbar-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: -0.01em;
+      color: var(--text-bright);
+    }
+
+    .brand-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #0284c7, #6366f1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+      flex-shrink: 0;
+    }
+
+    .brand-name-text {
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .brand-status {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent-emerald);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent-emerald);
+      flex-shrink: 0;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-link {
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: var(--radius-sm);
+      transition: color var(--transition-fast), background var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-link:hover {
+      color: var(--text-bright);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .nav-link.active {
+      color: var(--accent-cyan);
+      font-weight: 600;
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border: 1px solid transparent;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--gradient-brand);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(56, 189, 248, 0.45);
+      color: #ffffff;
+    }
+
+    .btn-outline {
+      background: var(--bg-card);
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-sm {
+      padding: 7px 14px;
+      font-size: 0.85rem;
+    }
+
+    .theme-toggle-btn {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-medium);
+      background: var(--bg-card);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .theme-toggle-btn:hover {
+      color: var(--text-bright);
+      border-color: var(--border-accent);
+      background: var(--bg-card-hover);
+    }
+
+    /* Mobile Hamburger */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+      background: transparent;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      color: var(--text-primary);
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      border-radius: 2px;
+    }
+
+    .mobile-menu-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg-primary);
+      backdrop-filter: blur(20px);
+      padding: 32px 24px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 16px;
+      transform: translateY(-100%);
+      transition: transform var(--transition-slow);
+      overflow-y: auto;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mobile-drawer.open {
+      transform: translateY(0);
+      display: flex;
+    }
+
+    .mobile-drawer .nav-link {
+      font-size: 1.1rem;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+    }
+
+    /* ==========================================================================
+       4. HERO SECTION (INTERACTIVE DISTRIBUTED TOPOLOGY CANVAS)
+       ========================================================================== */
+    .hero-section {
+      min-height: calc(100vh - var(--nav-height));
+      padding-top: calc(var(--nav-height) + 40px);
+      padding-bottom: 80px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: auto;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 890px;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 16px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--accent-emerald);
+      margin-bottom: 24px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.15);
+    }
+
+    .status-pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--accent-emerald);
+      border-radius: 50%;
+      position: relative;
+    }
+
+    .status-pulse-dot::after {
+      content: '';
+      position: absolute;
+      top: -4px;
+      left: -4px;
+      right: -4px;
+      bottom: -4px;
+      border-radius: 50%;
+      border: 1px solid var(--accent-emerald);
+      animation: pulse-ring 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(0.8); opacity: 0.8; }
+      100% { transform: scale(2.2); opacity: 0; }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: 3.6rem;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      color: var(--text-bright);
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.22rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      max-width: 800px;
+    }
+
+    .hero-badges-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .hero-tech-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 6px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero-tech-pill:hover {
+      border-color: var(--accent-cyan);
+      transform: translateY(-2px);
+      background: var(--bg-card-hover);
+      box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .hero-quick-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .quick-stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .quick-stat-val {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--accent-cyan);
+    }
+
+    .quick-stat-lbl {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       5. ABOUT & ENGINEERING PHILOSOPHY SECTION
+       ========================================================================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .about-bio-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-lead {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-bright);
+      margin-bottom: 20px;
+      line-height: 1.65;
+    }
+
+    .about-paragraph {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    .terminal-box {
+      background: var(--bg-terminal);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      margin-top: 24px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      color: #94a3b8;
+    }
+
+    .terminal-header {
+      background: rgba(0, 0, 0, 0.35);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-title {
+      color: #94a3b8;
+      font-size: 0.78rem;
+    }
+
+    .terminal-body {
+      padding: 16px;
+      line-height: 1.7;
+    }
+
+    .term-key { color: var(--accent-cyan); }
+    .term-str { color: #38bdf8; }
+    [data-theme="dark"] .term-str { color: #7dd3fc; }
+    .term-num { color: #f59e0b; }
+    .term-bool { color: #10b981; }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .philosophy-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      transition: all var(--transition-normal);
+      display: flex;
+      gap: 18px;
+    }
+
+    .philosophy-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .philosophy-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .philosophy-card:nth-child(2) .philosophy-icon {
+      background: rgba(16, 185, 129, 0.1);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--accent-emerald);
+    }
+    .philosophy-card:nth-child(3) .philosophy-icon {
+      background: rgba(168, 85, 247, 0.1);
+      border-color: rgba(168, 85, 247, 0.3);
+      color: var(--accent-purple);
+    }
+    .philosophy-card:nth-child(4) .philosophy-icon {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: var(--accent-amber);
+    }
+
+    .philosophy-content h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-bottom: 6px;
+    }
+
+    .philosophy-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       6. METRICS & IMPACT SECTION
+       ========================================================================== */
+    .metrics-section {
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .metric-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--transition-normal);
+    }
+
+    .metric-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-brand);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .metric-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .metric-card:hover::before {
+      opacity: 1;
+    }
+
+    .metric-value {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text-bright);
+      margin-bottom: 10px;
+    }
+
+    .metric-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+    }
+
+    .metric-context {
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       7. TECHNICAL SKILLS (INTERACTIVE FILTER & MATRIX)
+       ========================================================================== */
+    .skills-filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+      justify-content: flex-start;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-full);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-btn:hover {
+      color: var(--text-bright);
+      border-color: var(--border-accent);
+    }
+
+    .filter-btn.active {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: var(--accent-cyan);
+      color: var(--accent-cyan);
+      font-weight: 600;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
+    }
+
+    .skills-category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 24px;
+    }
+
+    .skill-cat-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: all var(--transition-normal);
+    }
+
+    .skill-cat-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .skill-cat-icon {
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+    }
+
+    .skill-cat-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+
+    .skill-items-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .skill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .skill-badge:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-accent);
+      color: var(--accent-cyan);
+      transform: translateY(-1px);
+    }
+
+    .skill-badge.highlight-react {
+      border-color: rgba(0, 216, 255, 0.4);
+      background: rgba(0, 216, 255, 0.08);
+      color: var(--accent-react);
+      font-weight: 600;
+    }
+
+    .skill-badge.highlight-angular {
+      border-color: rgba(244, 63, 94, 0.4);
+      background: rgba(244, 63, 94, 0.08);
+      color: var(--accent-angular);
+      font-weight: 600;
+    }
+
+    .skill-badge.highlight {
+      border-color: rgba(168, 85, 247, 0.4);
+      background: rgba(168, 85, 247, 0.08);
+      color: var(--accent-purple);
+    }
+
+    /* ==========================================================================
+       8. PROFESSIONAL EXPERIENCE (ENGINEERING TIMELINE)
+       ========================================================================== */
+    .timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 30px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-cyan) 0%, var(--accent-purple) 60%, transparent 100%);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 80px;
+      margin-bottom: 56px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-node {
+      position: absolute;
+      left: 17px;
+      top: 24px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      border: 2px solid var(--accent-cyan);
+      box-shadow: 0 0 15px var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .timeline-node-inner {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent-cyan);
+    }
+
+    .timeline-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+    }
+
+    .timeline-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .exp-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .exp-role {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-bright);
+    }
+
+    .exp-badge {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-full);
+      color: var(--accent-cyan);
+    }
+
+    .exp-company {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      margin-bottom: 4px;
+    }
+
+    .exp-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .exp-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .exp-project-name {
+      display: inline-block;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      background: rgba(56, 189, 248, 0.08);
+      padding: 6px 14px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 20px;
+      border-left: 3px solid var(--accent-cyan);
+    }
+
+    .achievement-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .achievement-item {
+      display: flex;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .achievement-icon {
+      color: var(--accent-cyan);
+      margin-top: 4px;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .achievement-item strong {
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+
+    .tech-stack-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    /* ==========================================================================
+       9. FEATURED PROJECTS SECTION
+       ========================================================================== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 32px;
+    }
+
+    .project-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .project-badge-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .proj-type {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: var(--accent-indigo);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .proj-year {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .project-title {
+      font-family: var(--font-display);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+
+    .project-subtitle {
+      font-size: 1rem;
+      color: var(--accent-cyan);
+      margin-bottom: 16px;
+      font-weight: 500;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .project-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .proj-highlight-item {
+      display: flex;
+      gap: 10px;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .proj-highlight-item i {
+      color: var(--accent-emerald);
+      margin-top: 3px;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .proj-highlight-item strong {
+      color: var(--text-bright);
+    }
+
+    /* Expandable Engineering Challenges Dropdown */
+    .challenge-accordion {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      border: none;
+      color: var(--text-primary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background var(--transition-fast);
+    }
+
+    .accordion-trigger:hover {
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    .accordion-trigger i {
+      transition: transform var(--transition-normal);
+    }
+
+    .accordion-trigger.active i {
+      transform: rotate(180deg);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out;
+      padding: 0 16px;
+    }
+
+    .accordion-content.open {
+      padding: 12px 16px 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .accordion-challenge-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.84rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       10. GENAI & AI ENGINEERING (PIPELINE VISUALIZER)
+       ========================================================================== */
+    .ai-pipeline-container {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .pipeline-intro {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 36px;
+    }
+
+    .pipeline-intro h3 {
+      font-size: 1.4rem;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+
+    .pipeline-track {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      overflow-x: auto;
+      padding: 20px 10px;
+      gap: 8px;
+    }
+
+    .pipeline-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-width: 105px;
+      cursor: pointer;
+      transition: transform var(--transition-fast);
+      position: relative;
+      z-index: 2;
+    }
+
+    .pipeline-node:hover, .pipeline-node.active {
+      transform: translateY(-4px);
+    }
+
+    .pipeline-node-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pipeline-node:hover .pipeline-node-icon,
+    .pipeline-node.active .pipeline-node-icon {
+      background: rgba(168, 85, 247, 0.15);
+      border-color: var(--accent-purple);
+      color: var(--accent-purple);
+      box-shadow: 0 0 16px rgba(168, 85, 247, 0.3);
+    }
+
+    .pipeline-node-name {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .pipeline-node-sub {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .pipeline-connector {
+      flex: 1;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(56, 189, 248, 0.3), rgba(168, 85, 247, 0.5));
+      min-width: 20px;
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .pipeline-connector::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -3px;
+      width: 8px;
+      height: 8px;
+      border-top: 2px solid var(--accent-purple);
+      border-right: 2px solid var(--accent-purple);
+      transform: rotate(45deg);
+    }
+
+    .pipeline-detail-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-top: 24px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      transition: all var(--transition-normal);
+    }
+
+    .pipeline-detail-badge {
+      padding: 8px 14px;
+      border-radius: var(--radius-md);
+      background: rgba(168, 85, 247, 0.15);
+      border: 1px solid var(--accent-purple);
+      color: var(--accent-purple);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .pipeline-detail-text h4 {
+      font-size: 1.1rem;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .pipeline-detail-text p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .ai-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .ai-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all var(--transition-normal);
+    }
+
+    .ai-card:hover {
+      border-color: rgba(168, 85, 247, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(168, 85, 247, 0.15);
+    }
+
+    .ai-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .ai-card-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: rgba(168, 85, 247, 0.1);
+      border: 1px solid rgba(168, 85, 247, 0.25);
+      color: var(--accent-purple);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .ai-card h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+
+    .ai-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       11. SYSTEM DESIGN & ARCHITECTURE SECTION (INTERACTIVE EXPLORER)
+       ========================================================================== */
+    .arch-container {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .arch-diagram-wrapper {
+      position: relative;
+      margin-bottom: 32px;
+    }
+
+    .arch-diagram-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      align-items: center;
+      position: relative;
+    }
+
+    .arch-tier {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .arch-tier-title {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .arch-node {
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      padding: 16px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .arch-node:hover, .arch-node.active {
+      border-color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
+    }
+
+    .arch-node-icon {
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+      margin-bottom: 6px;
+    }
+
+    .arch-node-title {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      line-height: 1.2;
+    }
+
+    .arch-node-tech {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Inspector Card when user clicks on a node */
+    .arch-inspector {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .inspector-col h4 {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .inspector-col p, .inspector-col ul {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .inspector-col ul {
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .arch-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    /* ==========================================================================
+       12. EDUCATION, CERTIFICATIONS & ACHIEVEMENTS
+       ========================================================================== */
+    .creds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 48px;
+    }
+
+    .cred-block-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .edu-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+    }
+
+    .edu-card:hover {
+      border-color: var(--border-accent);
+      transform: translateY(-2px);
+    }
+
+    .edu-degree {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .edu-school {
+      font-size: 0.95rem;
+      color: var(--accent-cyan);
+      margin-bottom: 12px;
+    }
+
+    .edu-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .edu-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: var(--radius-sm);
+      color: var(--accent-emerald);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .cert-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .cert-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all var(--transition-fast);
+    }
+
+    .cert-card:hover {
+      border-color: var(--border-accent);
+      transform: translateX(4px);
+    }
+
+    .cert-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cert-icon {
+      font-size: 1.25rem;
+      color: var(--accent-amber);
+    }
+
+    .cert-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-bright);
+    }
+
+    .cert-issuer {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    /* Achievements Grid */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .achievement-award-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: all var(--transition-normal);
+    }
+
+    .achievement-award-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+    }
+
+    .award-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      color: var(--accent-amber);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .award-details h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .award-details p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       13. CONTACT SECTION
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-info-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-lead {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .contact-method-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .contact-method-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .contact-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-method-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    .contact-method-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      word-break: break-all;
+    }
+
+    .copy-email-btn {
+      background: transparent;
+      border: 1px solid var(--border-accent);
+      color: var(--accent-cyan);
+      cursor: pointer;
+      font-size: 0.85rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      transition: all var(--transition-fast);
+      margin-left: 6px;
+    }
+
+    .copy-email-btn:hover {
+      background: rgba(56, 189, 248, 0.15);
+    }
+
+    .social-links-row {
+      display: flex;
+      gap: 12px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      transition: all var(--transition-fast);
+    }
+
+    .social-btn:hover {
+      border-color: var(--border-accent);
+      color: var(--accent-cyan);
+      transform: translateY(-2px);
+      background: var(--bg-card-hover);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* Contact Form */
+    .contact-form-card {
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg-input);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-md);
+      color: var(--text-bright);
+      font-size: 0.95rem;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-feedback {
+      margin-top: 14px;
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      display: none;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid var(--accent-emerald);
+      color: var(--accent-emerald);
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid var(--accent-rose);
+      color: var(--accent-rose);
+    }
+
+    /* ==========================================================================
+       14. FOOTER & BACK TO TOP
+       ========================================================================== */
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-subtle);
+      padding: 48px 0 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    .footer-info h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-bottom: 4px;
+    }
+
+    .footer-info p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-nav a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: color var(--transition-fast);
+    }
+
+    .footer-nav a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .back-to-top-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-md);
+      background: var(--bg-glass-card);
+      border: 1px solid var(--border-accent);
+      color: var(--accent-cyan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 900;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(12px);
+      transition: all var(--transition-normal);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .back-to-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .back-to-top-btn:hover {
+      background: var(--accent-cyan);
+      color: #000;
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.4);
+    }
+
+    /* ==========================================================================
+       15. RESPONSIVENESS & MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 1024px) {
+      .hero-title {
+        font-size: 2.8rem;
+      }
+      .about-grid, .creds-grid, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      .arch-diagram-grid {
+        grid-template-columns: 1fr;
+      }
+      .arch-inspector {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --nav-height: 64px;
+      }
+      .nav-menu {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: flex;
+      }
+      .hero-title {
+        font-size: 2.2rem;
+      }
+      .hero-subtitle {
+        font-size: 1.05rem;
+      }
+      .section {
+        padding: 64px 0;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline::before {
+        left: 15px;
+      }
+      .timeline-node {
+        left: 2px;
+      }
+      .timeline-item {
+        padding-left: 45px;
+      }
+      .pipeline-track {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .pipeline-connector {
+        height: 20px;
+        width: 2px;
+        margin: 0 auto;
+      }
+      .pipeline-connector::after {
+        top: auto;
+        bottom: 0;
+        right: -3px;
+        transform: rotate(135deg);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background & Grid -->
+  <div class="bg-grid-pattern" aria-hidden="true"></div>
+  <div class="ambient-glow" style="top: 10%; left: -150px; background: var(--accent-cyan);" aria-hidden="true"></div>
+  <div class="ambient-glow" style="top: 40%; right: -150px; background: var(--accent-purple);" aria-hidden="true"></div>
+  <div class="ambient-glow" style="top: 75%; left: 10%; background: var(--accent-blue);" aria-hidden="true"></div>
+
+  <!-- ==========================================================================
+       1. NAVIGATION BAR (Meda Prashanth Kumar)
+       ========================================================================== -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar-container">
+      <a href="#hero" class="nav-brand" aria-label="Meda Prashanth Kumar Home">
+        <div class="brand-avatar">P</div>
+        <span class="brand-name-text">Meda Prashanth Kumar</span>
+        <span class="brand-status" title="Available for challenging engineering roles"></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#ai-engineering" class="nav-link">AI Engineering</a>
+        <a href="#architecture" class="nav-link">Architecture</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle Dark / Light Theme" title="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        
+        <a href="#contact" class="btn btn-primary btn-sm">
+          <span>Let's Connect</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle Mobile Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <a href="#hero" class="nav-link mobile-link">Home</a>
+    <a href="#about" class="nav-link mobile-link">About &amp; Philosophy</a>
+    <a href="#metrics" class="nav-link mobile-link">Impact Metrics</a>
+    <a href="#skills" class="nav-link mobile-link">Technical Skills</a>
+    <a href="#experience" class="nav-link mobile-link">Experience</a>
+    <a href="#projects" class="nav-link mobile-link">Featured Projects</a>
+    <a href="#ai-engineering" class="nav-link mobile-link">GenAI Engineering</a>
+    <a href="#architecture" class="nav-link mobile-link">System Design</a>
+    <a href="#education" class="nav-link mobile-link">Education &amp; Certs</a>
+    <a href="#contact" class="nav-link mobile-link">Contact</a>
+    <div style="padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+      <!-- RESUME DOWNLOAD LINK (Replace 'resume.pdf' with actual URL or path when hosting) -->
+      <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" style="width: 100%; margin-bottom: 8px;">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        <span>Download Resume</span>
+      </a>
+      <a href="#contact" class="btn btn-primary" style="width: 100%;">Let's Connect</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <!-- High-performance Canvas for Distributed Topology -->
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+      <div class="container hero-content">
+        <div class="status-badge">
+          <span class="status-pulse-dot"></span>
+          <span>Available for challenging engineering opportunities</span>
+        </div>
+
+        <h1 class="hero-title">
+          Senior Software Engineer<br />
+          <span class="gradient-text">Building Scalable Systems</span> &amp; <span class="ai-gradient-text">AI Applications</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Full-Stack Engineer specializing in <strong>Angular, React, Node.js, Python, AWS</strong>, distributed systems, system design, and <strong>GenAI / LLM engineering</strong>. Proven track record optimizing high-throughput search queries across 20M+ records and architecting production multi-tenant systems.
+        </p>
+
+        <div class="hero-badges-container" aria-label="Core Technology Badges">
+          <span class="hero-tech-pill"><i class="fa-brands fa-angular" style="color:var(--accent-angular)"></i> Angular (v12–v19)</span>
+          <span class="hero-tech-pill"><i class="fa-brands fa-react" style="color:var(--accent-react)"></i> React</span>
+          <span class="hero-tech-pill"><i class="fa-brands fa-node-js" style="color:#22c55e"></i> Node.js</span>
+          <span class="hero-tech-pill"><i class="fa-brands fa-python" style="color:var(--accent-cyan)"></i> Python (FastAPI)</span>
+          <span class="hero-tech-pill"><i class="fa-brands fa-aws" style="color:var(--accent-amber)"></i> AWS Serverless</span>
+          <span class="hero-tech-pill"><i class="fa-solid fa-database" style="color:var(--accent-blue)"></i> PostgreSQL</span>
+          <span class="hero-tech-pill"><i class="fa-solid fa-brain" style="color:var(--accent-purple)"></i> GenAI &amp; LLMs</span>
+          <span class="hero-tech-pill"><i class="fa-solid fa-network-wired" style="color:var(--accent-emerald)"></i> Distributed Systems</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Work</span>
+            <i class="fa-solid fa-arrow-down"></i>
+          </a>
+
+          <!-- RESUME PLACEHOLDER: Update href="resume.pdf" with the target PDF path -->
+          <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="hero-resume-btn" title="Download Meda Prashanth Kumar Resume">
+            <i class="fa-solid fa-file-pdf" style="color:var(--accent-rose)"></i>
+            <span>Download Resume</span>
+          </a>
+        </div>
+
+        <div class="hero-quick-stats">
+          <div class="quick-stat-item">
+            <span class="quick-stat-val">5.5+</span>
+            <span class="quick-stat-lbl">Years of Experience</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="quick-stat-val">20M+</span>
+            <span class="quick-stat-lbl">Records Optimized</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="quick-stat-val">~30%</span>
+            <span class="quick-stat-lbl">p95 Latency Reduction</span>
+          </div>
+          <div class="quick-stat-item">
+            <span class="quick-stat-val">2–3</span>
+            <span class="quick-stat-lbl">Devs Led in Offshore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. ABOUT & ENGINEERING PHILOSOPHY
+         ========================================================================== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-terminal"></i>
+            <span>Engineering Profile</span>
+          </div>
+          <h2 class="section-title">Architecting High-Throughput &amp; Resilient Systems</h2>
+          <p class="section-subtitle">
+            Bridging complex full-stack web applications (Angular &amp; React) with resilient cloud-native backends and cutting-edge Generative AI workflows.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Bio & Story -->
+          <div class="about-bio-card">
+            <p class="about-lead">
+              I am <strong>Meda Prashanth Kumar</strong>, a Senior Software Engineer with <strong>5.5+ years of experience</strong> designing and scaling high-performance distributed architectures using <strong>Angular, React, Node.js, Python (FastAPI), and AWS serverless technologies</strong>.
+            </p>
+            <p class="about-paragraph">
+              My engineering focus revolves around solving mission-critical throughput and scalability bottlenecks. I have designed sub-second search architectures over <strong>20M+ records</strong>, established resilient <strong>OAuth 2.0 / Okta RBAC multi-tenant boundaries</strong>, built responsive frontends using <strong>Angular &amp; React</strong>, and spearheaded <strong>GenAI &amp; OCR document automation workflows</strong> that streamline enterprise operations.
+            </p>
+            <p class="about-paragraph">
+              Beyond individual architecture and code craftsmanship, I lead offshore engineering pods, implement strict automated quality gates (SonarQube, Checkmarx), and maintain enterprise-grade SLA reliability through proactive CloudWatch telemetry and SRE incident mitigation.
+            </p>
+
+            <!-- Code/Terminal Visual Aesthetic -->
+            <div class="terminal-box">
+              <div class="terminal-header">
+                <div class="terminal-dots">
+                  <span class="terminal-dot dot-red"></span>
+                  <span class="terminal-dot dot-yellow"></span>
+                  <span class="terminal-dot dot-green"></span>
+                </div>
+                <span class="terminal-title">prashanth@engineer-workstation: ~/manifest.json</span>
+                <span><i class="fa-solid fa-code" style="font-size:0.75rem; color:#94a3b8"></i></span>
+              </div>
+              <div class="terminal-body">
+                {<br />
+                &nbsp;&nbsp;<span class="term-key">"engineer"</span>: <span class="term-str">"Meda Prashanth Kumar"</span>,<br />
+                &nbsp;&nbsp;<span class="term-key">"role"</span>: <span class="term-str">"Senior Software Engineer"</span>,<br />
+                &nbsp;&nbsp;<span class="term-key">"experience_years"</span>: <span class="term-num">5.5</span>,<br />
+                &nbsp;&nbsp;<span class="term-key">"frontend_stack"</span>: [<span class="term-str">"Angular (v12–v19)"</span>, <span class="term-str">"React"</span>, <span class="term-str">"TypeScript"</span>, <span class="term-str">"RxJS"</span>, <span class="term-str">"AG Grid"</span>],<br />
+                &nbsp;&nbsp;<span class="term-key">"backend_and_cloud"</span>: [<span class="term-str">"Node.js"</span>, <span class="term-str">"Python FastAPI"</span>, <span class="term-str">"AWS Lambda"</span>, <span class="term-str">"API Gateway"</span>],<br />
+                &nbsp;&nbsp;<span class="term-key">"genai_stack"</span>: [<span class="term-str">"LangChain"</span>, <span class="term-str">"LangGraph"</span>, <span class="term-str">"CrewAI"</span>, <span class="term-str">"RAG"</span>, <span class="term-str">"RapidOCR"</span>],<br />
+                &nbsp;&nbsp;<span class="term-key">"location"</span>: <span class="term-str">"Hyderabad, India"</span>,<br />
+                &nbsp;&nbsp;<span class="term-key">"system_reliability_focus"</span>: <span class="term-bool">true</span><br />
+                }
+              </div>
+            </div>
+          </div>
+
+          <!-- Engineering Philosophy Cards -->
+          <div class="philosophy-grid">
+            <div class="philosophy-card">
+              <div class="philosophy-icon">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <div class="philosophy-content">
+                <h4>Scalability by Design</h4>
+                <p>Decouple compute and state via event-driven microservices and serverless workers to scale horizontally as concurrency explodes.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-icon">
+                <i class="fa-solid fa-gauge-high"></i>
+              </div>
+              <div class="philosophy-content">
+                <h4>Performance &amp; Latency</h4>
+                <p>Profile the critical path, optimize composite database indexes, leverage streaming APIs, and reduce p95 latency systematically.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="philosophy-content">
+                <h4>Zero-Trust Security &amp; Isolation</h4>
+                <p>Enforce strict OAuth 2.0 / RBAC multi-tenant isolation, automated SAST scans, and end-to-end encryption without compromising throughput.</p>
+              </div>
+            </div>
+
+            <div class="philosophy-card">
+              <div class="philosophy-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+              </div>
+              <div class="philosophy-content">
+                <h4>Intelligent Automation</h4>
+                <p>Harness GenAI agents, OCR extraction pipelines, and event routing to eliminate manual toil and empower human-in-the-loop validation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. IMPACT & ENGINEERING METRICS
+         ========================================================================== -->
+    <section class="section metrics-section" id="metrics">
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 48px;">
+          <div class="section-tag">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>Verified Impact</span>
+          </div>
+          <h2 class="section-title">Quantifiable Engineering Outcomes</h2>
+          <p class="section-subtitle" style="margin: 0 auto;">
+            Metrics backed by production enterprise systems, high-concurrency claims platforms, and core database optimizations.
+          </p>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value counter" data-target="5.5" data-suffix="+">5.5+</div>
+            <div class="metric-label">Years Experience</div>
+            <p class="metric-context">Full-stack, distributed systems &amp; cloud engineering across Tier-1 enterprise environments.</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-value counter" data-target="20" data-suffix="M+">20M+</div>
+            <div class="metric-label">Records Optimized</div>
+            <p class="metric-context">High-throughput search engine across healthcare claim datasets with sub-second response times.</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-value counter" data-target="30" data-prefix="~" data-suffix="%">~30%</div>
+            <div class="metric-label">p95 Latency Reduction</div>
+            <p class="metric-context">Achieved via PostgreSQL/MSSQL indexing refactoring and efficient pagination patterns.</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-value counter" data-target="20" data-prefix="" data-suffix="%">15–20%</div>
+            <div class="metric-label">Page Load Improvement</div>
+            <p class="metric-context">Boosted core web vitals through modular UI architecture and RxJS reactive pipelines.</p>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-value counter" data-target="3" data-prefix="2–" data-suffix="">2–3</div>
+            <div class="metric-label">Developers Led</div>
+            <p class="metric-context">Offshore engineering leadership, mentoring, PR code reviews, and quality governance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. TECHNICAL SKILLS MATRIX & INTERACTIVE FILTER
+         ========================================================================== */ -->
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Technical Capabilities</span>
+          </div>
+          <h2 class="section-title">Production-Grade Skill Matrix</h2>
+          <p class="section-subtitle">
+            An interactive catalog of languages, architectures, modern frontend frameworks (Angular &amp; React), cloud infrastructure, and AI frameworks.
+          </p>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="skills-filter-container" role="tablist" aria-label="Skills Category Filter">
+          <button class="filter-btn active" data-category="all" role="tab">All Skills</button>
+          <button class="filter-btn" data-category="frontend" role="tab">Frontend (Angular / React)</button>
+          <button class="filter-btn" data-category="backend" role="tab">Backend &amp; APIs</button>
+          <button class="filter-btn" data-category="cloud" role="tab">Cloud &amp; DevOps</button>
+          <button class="filter-btn" data-category="ai" role="tab">AI &amp; GenAI</button>
+          <button class="filter-btn" data-category="databases" role="tab">Databases</button>
+          <button class="filter-btn" data-category="architecture" role="tab">System Design</button>
+          <button class="filter-btn" data-category="security" role="tab">Security &amp; Testing</button>
+        </div>
+
+        <!-- Category Grid -->
+        <div class="skills-category-grid" id="skills-grid">
+          
+          <!-- Category 1: Frontend -->
+          <div class="skill-cat-card" data-cat="frontend">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-code skill-cat-icon"></i>
+              <h3 class="skill-cat-title">Frontend Engineering</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight-angular"><i class="fa-brands fa-angular"></i> Angular (v12–v19)</span>
+              <span class="skill-badge highlight-react"><i class="fa-brands fa-react"></i> React (Hooks, Components, SPA)</span>
+              <span class="skill-badge"><i class="fa-brands fa-js"></i> TypeScript</span>
+              <span class="skill-badge"><i class="fa-brands fa-square-js"></i> JavaScript (ES6+)</span>
+              <span class="skill-badge"><i class="fa-solid fa-table"></i> AG Grid (Editable Tables)</span>
+              <span class="skill-badge"><i class="fa-solid fa-chart-pie"></i> AG Charts</span>
+              <span class="skill-badge"><i class="fa-solid fa-bolt"></i> RxJS Reactive Pipelines</span>
+              <span class="skill-badge"><i class="fa-solid fa-palette"></i> Angular Material</span>
+              <span class="skill-badge"><i class="fa-brands fa-html5"></i> HTML5 &amp; CSS3</span>
+            </div>
+          </div>
+
+          <!-- Category 2: Backend & APIs -->
+          <div class="skill-cat-card" data-cat="backend">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-network-wired skill-cat-icon"></i>
+              <h3 class="skill-cat-title">Backend &amp; APIs</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-brands fa-node-js"></i> Node.js</span>
+              <span class="skill-badge"><i class="fa-solid fa-server"></i> Express.js</span>
+              <span class="skill-badge highlight"><i class="fa-brands fa-python"></i> Python FastAPI</span>
+              <span class="skill-badge"><i class="fa-solid fa-route"></i> RESTful API Design</span>
+              <span class="skill-badge"><i class="fa-solid fa-cubes"></i> Microservices Architecture</span>
+              <span class="skill-badge"><i class="fa-solid fa-cloud-arrow-up"></i> AWS API Gateway</span>
+              <span class="skill-badge"><i class="fa-solid fa-filter"></i> Schema Validation (Pydantic)</span>
+            </div>
+          </div>
+
+          <!-- Category 3: Cloud & DevOps -->
+          <div class="skill-cat-card" data-cat="cloud">
+            <div class="skill-cat-header">
+              <i class="fa-brands fa-aws skill-cat-icon"></i>
+              <h3 class="skill-cat-title">Cloud &amp; DevOps</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-solid fa-bolt-lightning"></i> AWS Lambda</span>
+              <span class="skill-badge"><i class="fa-solid fa-door-open"></i> API Gateway</span>
+              <span class="skill-badge"><i class="fa-solid fa-box-archive"></i> AWS S3</span>
+              <span class="skill-badge"><i class="fa-solid fa-id-card"></i> AWS Cognito</span>
+              <span class="skill-badge"><i class="fa-solid fa-key"></i> AWS KMS</span>
+              <span class="skill-badge"><i class="fa-solid fa-chart-area"></i> CloudWatch Telemetry</span>
+              <span class="skill-badge"><i class="fa-brands fa-microsoft"></i> Microsoft Azure</span>
+              <span class="skill-badge"><i class="fa-brands fa-docker"></i> Docker</span>
+              <span class="skill-badge"><i class="fa-brands fa-github"></i> GitHub Actions CI/CD</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-file-code"></i> Terraform &amp; CDKTF</span>
+            </div>
+          </div>
+
+          <!-- Category 4: AI & GenAI -->
+          <div class="skill-cat-card" data-cat="ai">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-brain skill-cat-icon" style="color:var(--accent-purple)"></i>
+              <h3 class="skill-cat-title">AI &amp; GenAI Engineering</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-solid fa-link"></i> LangChain</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-diagram-project"></i> LangGraph</span>
+              <span class="skill-badge"><i class="fa-solid fa-robot"></i> CrewAI Multi-Agent</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-database"></i> RAG Pipelines</span>
+              <span class="skill-badge"><i class="fa-solid fa-file-lines"></i> RapidOCR Document AI</span>
+              <span class="skill-badge"><i class="fa-solid fa-wand-magic"></i> Prompt Engineering</span>
+              <span class="skill-badge"><i class="fa-solid fa-layer-group"></i> Vector Databases (pgvector)</span>
+              <span class="skill-badge"><i class="fa-brands fa-github-alt"></i> GitHub Copilot</span>
+            </div>
+          </div>
+
+          <!-- Category 5: Databases & Storage -->
+          <div class="skill-cat-card" data-cat="databases">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-database skill-cat-icon"></i>
+              <h3 class="skill-cat-title">Databases &amp; Storage</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-solid fa-database"></i> PostgreSQL</span>
+              <span class="skill-badge"><i class="fa-solid fa-server"></i> MSSQL</span>
+              <span class="skill-badge"><i class="fa-solid fa-leaf"></i> MongoDB</span>
+              <span class="skill-badge"><i class="fa-solid fa-bolt"></i> DynamoDB</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-magnifying-glass-chart"></i> Composite Indexing</span>
+              <span class="skill-badge"><i class="fa-solid fa-arrows-split-up-and-left"></i> Database Sharding</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-gauge-high"></i> Query Optimization</span>
+            </div>
+          </div>
+
+          <!-- Category 6: System Design -->
+          <div class="skill-cat-card" data-cat="architecture">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-sitemap skill-cat-icon"></i>
+              <h3 class="skill-cat-title">System Design &amp; Architecture</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-solid fa-network-wired"></i> Distributed Systems</span>
+              <span class="skill-badge"><i class="fa-solid fa-chart-line"></i> Horizontal Scalability</span>
+              <span class="skill-badge"><i class="fa-solid fa-shield-heart"></i> High Availability &amp; FT</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-arrow-trend-up"></i> Event-Driven Architecture</span>
+              <span class="skill-badge"><i class="fa-solid fa-memory"></i> Caching Strategies</span>
+              <span class="skill-badge"><i class="fa-solid fa-sliders"></i> Rate Limiting &amp; Throttling</span>
+              <span class="skill-badge"><i class="fa-solid fa-users-gear"></i> Multi-Tenant Isolation</span>
+            </div>
+          </div>
+
+          <!-- Category 7: Security & Quality -->
+          <div class="skill-cat-card" data-cat="security">
+            <div class="skill-cat-header">
+              <i class="fa-solid fa-shield-halved skill-cat-icon"></i>
+              <h3 class="skill-cat-title">Security &amp; Testing</h3>
+            </div>
+            <div class="skill-items-list">
+              <span class="skill-badge highlight"><i class="fa-solid fa-lock"></i> OAuth 2.0 &amp; Okta</span>
+              <span class="skill-badge highlight"><i class="fa-solid fa-user-shield"></i> Fine-Grained RBAC</span>
+              <span class="skill-badge"><i class="fa-solid fa-key"></i> AWS KMS Encryption</span>
+              <span class="skill-badge"><i class="fa-solid fa-bug-slash"></i> SonarQube Quality Gates</span>
+              <span class="skill-badge"><i class="fa-solid fa-shield-virus"></i> Checkmarx SAST</span>
+              <span class="skill-badge"><i class="fa-solid fa-vial"></i> Jasmine &amp; Karma</span>
+              <span class="skill-badge"><i class="fa-solid fa-vials"></i> Jest &amp; Cypress</span>
+              <span class="skill-badge"><i class="fa-solid fa-paper-plane"></i> Postman API Testing</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+       8. PROFESSIONAL EXPERIENCE (VERTICAL TIMELINE)
+       ========================================================================== -->
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Career History</span>
+          </div>
+          <h2 class="section-title">Professional Experience</h2>
+          <p class="section-subtitle">
+            A chronological timeline of engineering leadership, high-concurrency systems design, and performance optimizations.
+          </p>
+        </div>
+
+        <div class="timeline">
+          
+          <!-- Role 1: Evernorth (Cigna) -->
+          <div class="timeline-item">
+            <div class="timeline-node">
+              <div class="timeline-node-inner"></div>
+            </div>
+
+            <div class="timeline-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-role">Software Senior Analyst</h3>
+                  <div class="exp-company">Evernorth (Cigna)</div>
+                </div>
+                <div class="exp-badge">Full-Time Conversion from TCS</div>
+              </div>
+
+              <div class="exp-meta">
+                <span><i class="fa-regular fa-calendar"></i> Apr 2023 – Present</span>
+                <span><i class="fa-solid fa-location-dot"></i> Hyderabad, India</span>
+                <span><i class="fa-solid fa-users"></i> Offshore Lead (2–3 Devs)</span>
+              </div>
+
+              <div class="exp-project-name">
+                <i class="fa-solid fa-diagram-project"></i> Postpay Solutions — Distributed Healthcare Claims Platform
+              </div>
+
+              <div class="achievement-grid">
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Platform Architecture:</strong> Owned end-to-end backend and frontend architecture for a distributed healthcare claims platform handling <strong>OPT, OPR, and TRACE workflows</strong> using AWS Lambda and API Gateway, enabling independent horizontal auto-scaling for high-concurrency workloads.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Database &amp; Query Optimization:</strong> Architected a high-throughput search system querying over <strong>20M+ records</strong> using PostgreSQL / MSSQL indexing strategies, query refactoring, and pagination patterns—reducing <strong>p95 query latency by ~30%</strong> with sub-second response times.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Security &amp; Multi-Tenancy:</strong> Enforced multi-tenant access control and secure service-to-service authorization using <strong>OAuth 2.0 (Okta) and fine-grained RBAC</strong>, upholding rigorous healthcare compliance standards without degrading API throughput.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Workflow Automation:</strong> Engineered an event-driven claim-assignment and task-routing engine that decoupled ingestion, processing, and reviewer assignment, cutting manual triage effort and improving analyst allocation efficiency.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Technical Leadership &amp; Governance:</strong> Led an offshore engineering team of 2–3 developers, accelerating sprint delivery velocity through architectural reviews, 1:1 mentorship, SonarQube quality gates, and Checkmarx security audits.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon"></i>
+                  <div>
+                    <strong>Site Reliability &amp; Monitoring:</strong> Monitored production systems via Amazon CloudWatch, proactively resolving <strong>Sev-1 / Sev-2 incidents</strong> and profiling bottlenecks to maintain high platform uptime and reliability.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-stack-row">
+                <span class="skill-badge">Angular</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">AWS Lambda</span>
+                <span class="skill-badge">API Gateway</span>
+                <span class="skill-badge">PostgreSQL</span>
+                <span class="skill-badge">MSSQL</span>
+                <span class="skill-badge">OAuth 2.0</span>
+                <span class="skill-badge">Okta</span>
+                <span class="skill-badge">RBAC</span>
+                <span class="skill-badge">CloudWatch</span>
+                <span class="skill-badge">SonarQube</span>
+                <span class="skill-badge">Checkmarx</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Role 2: Cognizant Technology Solutions -->
+          <div class="timeline-item">
+            <div class="timeline-node" style="border-color: var(--accent-purple);">
+              <div class="timeline-node-inner" style="background: var(--accent-purple);"></div>
+            </div>
+
+            <div class="timeline-card">
+              <div class="exp-header">
+                <div>
+                  <h3 class="exp-role">Associate Software Engineer</h3>
+                  <div class="exp-company">Cognizant Technology Solutions</div>
+                </div>
+                <div class="exp-badge" style="background:rgba(168,85,247,0.1); border-color:rgba(168,85,247,0.25); color:var(--accent-purple);">Full-Time</div>
+              </div>
+
+              <div class="exp-meta">
+                <span><i class="fa-regular fa-calendar"></i> Dec 2020 – Mar 2023</span>
+                <span><i class="fa-solid fa-location-dot"></i> Bengaluru, India</span>
+                <span><i class="fa-solid fa-building"></i> Enterprise Digital Engineering</span>
+              </div>
+
+              <div class="achievement-grid">
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <strong>Frontend Performance Engineering:</strong> Engineered responsive Angular UI components and RxJS reactive state pipelines, decreasing core page-load times by <strong>15–20%</strong> and optimizing client-side rendering cycles.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <strong>Microservices &amp; RESTful APIs:</strong> Built and deployed scalable REST APIs using <strong>Node.js / Express and Python FastAPI</strong>, optimizing backend query-execution paths to handle high-volume transactional data.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <strong>Automated Testing:</strong> Implemented comprehensive unit and integration test suites using <strong>Jasmine, Karma, and Jest</strong>, boosting code reliability and preventing regression defects.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <strong>CI/CD Pipelines:</strong> Authored automated <strong>GitHub Actions workflows</strong> for continuous integration, automated linting, security checking, and build deployments, reducing release cycle friction.
+                  </div>
+                </div>
+
+                <div class="achievement-item">
+                  <i class="fa-solid fa-chevron-right achievement-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <strong>Root-Cause Analysis:</strong> Conducted thorough root-cause analysis (RCA) and defect resolution across multi-tier enterprise systems in a fast-paced Agile environment.
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-stack-row">
+                <span class="skill-badge">Angular</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">RxJS</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Express.js</span>
+                <span class="skill-badge">Python FastAPI</span>
+                <span class="skill-badge">Jest</span>
+                <span class="skill-badge">Jasmine</span>
+                <span class="skill-badge">Karma</span>
+                <span class="skill-badge">GitHub Actions</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. FEATURED ENTERPRISE & AI PROJECTS
+         ========================================================================== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-diagram-project"></i>
+            <span>System Case Studies</span>
+          </div>
+          <h2 class="section-title">Featured Engineering Projects</h2>
+          <p class="section-subtitle">
+            Deep-dives into distributed platforms and AI orchestration engines built for real-world enterprise scale.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          
+          <!-- Project 1: Postpay Solutions -->
+          <div class="project-card">
+            <div>
+              <div class="project-badge-top">
+                <span class="proj-type">Distributed Cloud Architecture</span>
+                <span class="proj-year">2023 – Present</span>
+              </div>
+
+              <h3 class="project-title">Postpay Solutions</h3>
+              <div class="project-subtitle">Distributed Healthcare Claims Platform (Evernorth / Cigna)</div>
+              
+              <p class="project-desc">
+                An end-to-end distributed claims processing and audit platform supporting high-concurrency <strong>OPT, OPR, and TRACE workflows</strong>. Architected using AWS Serverless microservices to handle millions of transactions with high reliability and zero downtime.
+              </p>
+
+              <div class="project-highlights">
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <div><strong>High-Scale Querying:</strong> Sub-second search indexing spanning <strong>20M+ records</strong> with ~30% p95 latency reduction.</div>
+                </div>
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <div><strong>Zero-Trust Authorization:</strong> OAuth 2.0 (Okta) and multi-tenant RBAC ensuring strict healthcare audit compliance.</div>
+                </div>
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check"></i>
+                  <div><strong>Event-Driven Routing:</strong> Automated asynchronous claim-assignment engine decoupling ingestion and analyst triage.</div>
+                </div>
+              </div>
+
+              <!-- Interactive Expandable Challenges -->
+              <div class="challenge-accordion">
+                <button class="accordion-trigger" aria-expanded="false">
+                  <span><i class="fa-solid fa-shield-halved" style="color:var(--accent-cyan); margin-right:8px;"></i> Architecture Deep-Dive &amp; Tradeoffs</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-challenge-list">
+                    <p>• <strong>Scalability:</strong> Deployed AWS Lambda behind API Gateway to decouple stateful compute and achieve cost-effective elasticity under bursty claim ingestion.</p>
+                    <p>• <strong>Database Tuning:</strong> Transitioned heavy scan operations to composite B-tree indexes and cursor-based pagination across PostgreSQL and MSSQL.</p>
+                    <p>• <strong>Observability:</strong> Configured CloudWatch alarms, structured logging, and automated metric dashboards to resolve Sev-1/Sev-2 issues before user impact.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="skill-badge">AWS Lambda</span>
+              <span class="skill-badge">API Gateway</span>
+              <span class="skill-badge">Angular</span>
+              <span class="skill-badge">React</span>
+              <span class="skill-badge">Node.js</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">MSSQL</span>
+              <span class="skill-badge">Okta OAuth 2.0</span>
+              <span class="skill-badge">CloudWatch</span>
+            </div>
+          </div>
+
+          <!-- Project 2: PICA -->
+          <div class="project-card" style="border-color: rgba(168, 85, 247, 0.35);">
+            <div>
+              <div class="project-badge-top">
+                <span class="proj-type" style="background:rgba(168,85,247,0.15); border-color:var(--accent-purple); color:var(--accent-purple);">Enterprise GenAI System</span>
+                <span class="proj-year">2024 – Present</span>
+              </div>
+
+              <h3 class="project-title">PICA: AI Healthcare Claim Assistant</h3>
+              <div class="project-subtitle" style="color:var(--accent-purple);">Evernorth (Cigna) Enterprise Healthcare Platform</div>
+              
+              <p class="project-desc">
+                An intelligent clinical document processing and audit assistant that extracts, validates, and reasons over unstructured medical charts using <strong>RapidOCR, LangChain, and LangGraph multi-step workflows</strong>.
+              </p>
+
+              <div class="project-highlights">
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--accent-purple)"></i>
+                  <div><strong>OCR &amp; Ingestion Automation:</strong> RapidOCR ingests single &amp; bulk nurse-submitted audit PDFs, structuring them into validated JSON schemas.</div>
+                </div>
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--accent-purple)"></i>
+                  <div><strong>LLM Decision Support:</strong> LangChain and LangGraph orchestration power AI-assisted dosage validation and clinical forecasting.</div>
+                </div>
+                <div class="proj-highlight-item">
+                  <i class="fa-solid fa-circle-check" style="color:var(--accent-purple)"></i>
+                  <div><strong>Human-in-the-Loop:</strong> High-performance editable AG Grid interface in Angular/React for reviewers to verify extractions before committing to PostgreSQL analytics.</div>
+                </div>
+              </div>
+
+              <!-- Interactive Expandable Challenges -->
+              <div class="challenge-accordion">
+                <button class="accordion-trigger" aria-expanded="false">
+                  <span><i class="fa-solid fa-brain" style="color:var(--accent-purple); margin-right:8px;"></i> AI Engineering &amp; Guardrails</span>
+                  <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                  <div class="accordion-challenge-list">
+                    <p>• <strong>Determinism &amp; Hallucination Control:</strong> Applied schema validation and grounded context retrieval to prevent clinical extraction deviations.</p>
+                    <p>• <strong>Batch Processing:</strong> Engineered resilient Python FastAPI endpoints with async workers to handle large-scale PDF ingestion batches without memory exhaustion.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tech-stack-row">
+              <span class="skill-badge highlight">Angular</span>
+              <span class="skill-badge highlight-react">React</span>
+              <span class="skill-badge highlight">Python FastAPI</span>
+              <span class="skill-badge highlight">LangChain</span>
+              <span class="skill-badge highlight">LangGraph</span>
+              <span class="skill-badge">RapidOCR</span>
+              <span class="skill-badge">PostgreSQL</span>
+              <span class="skill-badge">AG Grid</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. GENAI & AI ENGINEERING SECTION (INTERACTIVE PIPELINE)
+         ========================================================================== -->
+    <section class="section" id="ai-engineering">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" style="color: var(--accent-purple); border-color: rgba(168, 85, 247, 0.35); background: rgba(168, 85, 247, 0.08);">
+            <i class="fa-solid fa-brain"></i>
+            <span>Applied Artificial Intelligence</span>
+          </div>
+          <h2 class="section-title">Engineering with AI, Not Just Using AI</h2>
+          <p class="section-subtitle">
+            Architecting end-to-end document intelligence pipelines, deterministic LLM orchestration with LangGraph, and human-in-the-loop validation systems.
+          </p>
+        </div>
+
+        <!-- Interactive Pipeline Visualizer -->
+        <div class="ai-pipeline-container">
+          <div class="pipeline-intro">
+            <h3>Interactive Document AI &amp; Clinical Decision Pipeline</h3>
+            <p style="font-size: 0.9rem; color: var(--text-secondary);">Click any stage below to inspect the data transformation and architectural mechanics.</p>
+          </div>
+
+          <div class="pipeline-track" id="pipeline-track">
+            
+            <!-- Step 1 -->
+            <div class="pipeline-node active" data-step="1" data-title="PDF Clinical Document Ingestion" data-tech="Angular / React / S3" data-desc="Nurse-submitted audit PDFs (single and bulk batches) uploaded via modern Angular / React frontend with pre-signed URLs directly to secure AWS S3 storage.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-file-pdf"></i></div>
+              <div class="pipeline-node-name">1. Audit PDF</div>
+              <div class="pipeline-node-sub">Ingestion</div>
+            </div>
+
+            <div class="pipeline-connector"></div>
+
+            <!-- Step 2 -->
+            <div class="pipeline-node" data-step="2" data-title="RapidOCR Extraction Engine" data-tech="RapidOCR / Python" data-desc="RapidOCR extracts unstructured clinical text, dosage tables, and medical metadata into machine-readable format with high fidelity.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-eye"></i></div>
+              <div class="pipeline-node-name">2. RapidOCR</div>
+              <div class="pipeline-node-sub">Extraction</div>
+            </div>
+
+            <div class="pipeline-connector"></div>
+
+            <!-- Step 3 -->
+            <div class="pipeline-node" data-step="3" data-title="Schema Validation & Structuring" data-tech="Pydantic / FastAPI" data-desc="Raw OCR output is normalized and structured into strict JSON schemas with type validation and boundary checks to prevent corrupted data.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-code"></i></div>
+              <div class="pipeline-node-name">3. Structured JSON</div>
+              <div class="pipeline-node-sub">Validation</div>
+            </div>
+
+            <div class="pipeline-connector"></div>
+
+            <!-- Step 4 -->
+            <div class="pipeline-node" data-step="4" data-title="LangGraph & RAG Orchestration" data-tech="LangChain / LangGraph" data-desc="Multi-agent graph workflow orchestrates clinical policy retrieval, dosage calculations, and automated claim audit reasoning.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-diagram-project"></i></div>
+              <div class="pipeline-node-name">4. LangGraph</div>
+              <div class="pipeline-node-sub">LLM Reasoning</div>
+            </div>
+
+            <div class="pipeline-connector"></div>
+
+            <!-- Step 5 -->
+            <div class="pipeline-node" data-step="5" data-title="Human-in-the-Loop Verification" data-tech="Editable AG Grid / Angular / React" data-desc="Clinical reviewers inspect, adjust, and approve AI recommendations on an interactive high-throughput AG Grid interface before final persistence.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-user-check"></i></div>
+              <div class="pipeline-node-name">5. Reviewer UI</div>
+              <div class="pipeline-node-sub">AG Grid Validation</div>
+            </div>
+
+            <div class="pipeline-connector"></div>
+
+            <!-- Step 6 -->
+            <div class="pipeline-node" data-step="6" data-title="Persistent Analytics & Vector Store" data-tech="PostgreSQL / pgvector" data-desc="Approved structured clinical claim metrics and vectorized representations are committed to PostgreSQL for downstream analytics and audit logging.">
+              <div class="pipeline-node-icon"><i class="fa-solid fa-database"></i></div>
+              <div class="pipeline-node-name">6. PostgreSQL</div>
+              <div class="pipeline-node-sub">Commit &amp; Vector</div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Pipeline Info Display -->
+          <div class="pipeline-detail-card" id="pipeline-detail-box">
+            <div class="pipeline-detail-badge" id="pipe-detail-badge">Tech: Angular / React / AWS S3</div>
+            <div class="pipeline-detail-text">
+              <h4 id="pipe-detail-title">1. PDF Clinical Document Ingestion</h4>
+              <p id="pipe-detail-desc">Nurse-submitted audit PDFs (single and bulk batches) uploaded via modern Angular / React frontend with pre-signed URLs directly to secure AWS S3 storage.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Capabilities Cards -->
+        <div class="ai-cards-grid">
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-card-icon"><i class="fa-solid fa-diagram-project"></i></div>
+              <h4>LangGraph &amp; Multi-Step Workflows</h4>
+            </div>
+            <p>Building stateful, cyclical multi-agent workflows with deterministic conditional checkpoints, error correction, and memory management.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-card-icon"><i class="fa-solid fa-book-bookmark"></i></div>
+              <h4>Enterprise RAG Pipelines</h4>
+            </div>
+            <p>Designing contextual retrieval pipelines combining vector indexing (pgvector), hybrid keyword search, and prompt grounding to curb hallucinations.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-card-icon"><i class="fa-solid fa-file-invoice"></i></div>
+              <h4>OCR &amp; Document Extraction</h4>
+            </div>
+            <p>Integrating RapidOCR to parse unstructured medical PDFs, tables, and handwritten annotations into schema-validated JSON data.</p>
+          </div>
+
+          <div class="ai-card">
+            <div class="ai-card-header">
+              <div class="ai-card-icon"><i class="fa-solid fa-users-gear"></i></div>
+              <h4>CrewAI &amp; Agentic Systems</h4>
+            </div>
+            <p>Exploring specialized multi-agent collaboration frameworks for task decomposition, role allocation, and autonomous verification.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         11. SYSTEM DESIGN & ARCHITECTURE (INTERACTIVE ARCHITECTURE INSPECTOR)
+         ========================================================================== -->
+    <section class="section" id="architecture">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>Architecture &amp; System Design</span>
+          </div>
+          <h2 class="section-title">Illustrative Production Architecture</h2>
+          <p class="section-subtitle">
+            Interactive breakdown of an enterprise cloud topology inspired by my experience designing serverless microservices, OAuth 2.0 / RBAC security, and 20M+ record data layers.
+          </p>
+        </div>
+
+        <div class="arch-container">
+          <div class="arch-diagram-wrapper">
+            <div class="arch-diagram-grid">
+              
+              <!-- Tier 1: Client -->
+              <div class="arch-tier">
+                <div class="arch-tier-title">Client Tier</div>
+                <div class="arch-node active" data-node="client">
+                  <i class="fa-brands fa-angular arch-node-icon" style="color:var(--accent-angular)"></i>
+                  <div class="arch-node-title">Angular &amp; React SPA</div>
+                  <div class="arch-node-tech">RxJS • AG Grid</div>
+                </div>
+              </div>
+
+              <!-- Tier 2: Gateway & Auth -->
+              <div class="arch-tier">
+                <div class="arch-tier-title">Gateway &amp; Auth</div>
+                <div class="arch-node" data-node="gateway">
+                  <i class="fa-solid fa-door-open arch-node-icon"></i>
+                  <div class="arch-node-title">API Gateway</div>
+                  <div class="arch-node-tech">Rate Limiting • CORS</div>
+                </div>
+                <div class="arch-node" data-node="auth">
+                  <i class="fa-solid fa-shield-halved arch-node-icon" style="color:var(--accent-purple)"></i>
+                  <div class="arch-node-title">Okta / OAuth 2.0</div>
+                  <div class="arch-node-tech">RBAC • Multi-Tenant</div>
+                </div>
+              </div>
+
+              <!-- Tier 3: Compute & Workflows -->
+              <div class="arch-tier">
+                <div class="arch-tier-title">Compute Layer</div>
+                <div class="arch-node" data-node="lambda">
+                  <i class="fa-solid fa-bolt arch-node-icon"></i>
+                  <div class="arch-node-title">AWS Lambda</div>
+                  <div class="arch-node-tech">Node.js / Python</div>
+                </div>
+                <div class="arch-node" data-node="events">
+                  <i class="fa-solid fa-shuffle arch-node-icon" style="color:var(--accent-amber)"></i>
+                  <div class="arch-node-title">Event-Driven Routing</div>
+                  <div class="arch-node-tech">Async Claims Dispatch</div>
+                </div>
+              </div>
+
+              <!-- Tier 4: Storage & Optimization -->
+              <div class="arch-tier">
+                <div class="arch-tier-title">Data Tier (20M+ Records)</div>
+                <div class="arch-node" data-node="postgres">
+                  <i class="fa-solid fa-database arch-node-icon" style="color:var(--accent-emerald)"></i>
+                  <div class="arch-node-title">PostgreSQL / MSSQL</div>
+                  <div class="arch-node-tech">Composite B-Tree Indexes</div>
+                </div>
+                <div class="arch-node" data-node="nosql">
+                  <i class="fa-solid fa-cubes arch-node-icon"></i>
+                  <div class="arch-node-title">DynamoDB / S3</div>
+                  <div class="arch-node-tech">Document Lake</div>
+                </div>
+              </div>
+
+              <!-- Tier 5: Telemetry & Governance -->
+              <div class="arch-tier">
+                <div class="arch-tier-title">Observability &amp; QA</div>
+                <div class="arch-node" data-node="telemetry">
+                  <i class="fa-solid fa-chart-area arch-node-icon" style="color:var(--accent-rose)"></i>
+                  <div class="arch-node-title">Amazon CloudWatch</div>
+                  <div class="arch-node-tech">Metrics • Sev-1 SRE</div>
+                </div>
+                <div class="arch-node" data-node="governance">
+                  <i class="fa-solid fa-check-double arch-node-icon"></i>
+                  <div class="arch-node-title">SonarQube &amp; SAST</div>
+                  <div class="arch-node-tech">Checkmarx Security</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Dynamic Architectural Inspector -->
+          <div class="arch-inspector" id="arch-inspector">
+            <div class="inspector-col">
+              <h4 id="inspect-title"><i class="fa-solid fa-circle-info"></i> Modern Frontend (Angular &amp; React SPA)</h4>
+              <p id="inspect-desc">
+                High-performance Single Page Applications built on Angular (v12–v19) and React utilizing RxJS reactive pipelines and AG Grid. Decouples state management, provides instant interactive filtering over dense claim sets, and renders data with 15–20% optimized initial load times.
+              </p>
+            </div>
+            <div class="inspector-col">
+              <h4><i class="fa-solid fa-gears"></i> Key Engineering Considerations</h4>
+              <ul id="inspect-points">
+                <li>Strict client-side typing with TypeScript interfaces and reusable React/Angular components.</li>
+                <li>Lazy-loaded feature modules reducing initial bundle overhead.</li>
+                <li>Optimistic UI updates with resilient error fallbacks.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="arch-legend">
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-cyan)"></span> Frontend / Ingestion</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-purple)"></span> Identity &amp; Multi-Tenancy</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-amber)"></span> Compute &amp; Event Bus</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-emerald)"></span> 20M+ Data Tier</div>
+            <div class="legend-item"><span class="legend-dot" style="background:var(--accent-rose)"></span> SRE &amp; Telemetry</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         12. EDUCATION, CERTIFICATIONS & AWARDS
+         ========================================================================== -->
+    <section class="section" id="education">
+      <div class="container">
+        
+        <div class="creds-grid">
+          <!-- Education Column -->
+          <div>
+            <h3 class="cred-block-title">
+              <i class="fa-solid fa-graduation-cap" style="color:var(--accent-cyan)"></i>
+              <span>Education</span>
+            </h3>
+            
+            <div class="edu-card">
+              <h4 class="edu-degree">Bachelor of Technology (B.Tech)</h4>
+              <div class="edu-school">Electronics &amp; Communication Engineering</div>
+              <div style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:12px;">
+                Rajeev Gandhi Memorial College of Engineering &amp; Technology
+              </div>
+              <div class="edu-meta">
+                <span><i class="fa-regular fa-calendar"></i> 2016 – 2020</span>
+                <span><i class="fa-solid fa-award"></i> CGPA: <strong>9.2 / 10.0</strong></span>
+              </div>
+              <div class="edu-badge">
+                <i class="fa-solid fa-medal"></i> Academic Scholarship Recipient
+              </div>
+            </div>
+          </div>
+
+          <!-- Certifications Column -->
+          <div>
+            <h3 class="cred-block-title">
+              <i class="fa-solid fa-certificate" style="color:var(--accent-amber)"></i>
+              <span>Industry Certifications</span>
+            </h3>
+
+            <div class="cert-list">
+              <div class="cert-card">
+                <div class="cert-info">
+                  <i class="fa-brands fa-aws cert-icon" style="color:var(--accent-amber)"></i>
+                  <div>
+                    <div class="cert-name">AWS Certified AI Practitioner</div>
+                    <div class="cert-issuer">Amazon Web Services (AWS)</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-circle-check" style="color:var(--accent-emerald)"></i>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-info">
+                  <i class="fa-solid fa-robot cert-icon" style="color:var(--accent-purple)"></i>
+                  <div>
+                    <div class="cert-name">Agentic AI Certification</div>
+                    <div class="cert-issuer">Edureka</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-circle-check" style="color:var(--accent-emerald)"></i>
+              </div>
+
+              <div class="cert-card">
+                <div class="cert-info">
+                  <i class="fa-brands fa-microsoft cert-icon" style="color:var(--accent-cyan)"></i>
+                  <div>
+                    <div class="cert-name">Azure Fundamentals (AZ-900)</div>
+                    <div class="cert-issuer">Microsoft</div>
+                  </div>
+                </div>
+                <i class="fa-solid fa-circle-check" style="color:var(--accent-emerald)"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Achievements -->
+        <div style="margin-top: 16px;">
+          <h3 class="cred-block-title">
+            <i class="fa-solid fa-trophy" style="color:var(--accent-amber)"></i>
+            <span>Honors &amp; Recognition</span>
+          </h3>
+
+          <div class="achievements-grid">
+            <div class="achievement-award-card">
+              <div class="award-icon-box"><i class="fa-solid fa-star"></i></div>
+              <div class="award-details">
+                <h4>Star Performer Award</h4>
+                <p>Awarded at <strong>Evernorth (Cigna)</strong> for stellar platform contributions, offshore delivery leadership, and high-impact Sev-1 incident resolution.</p>
+              </div>
+            </div>
+
+            <div class="achievement-award-card">
+              <div class="award-icon-box"><i class="fa-solid fa-rocket"></i></div>
+              <div class="award-details">
+                <h4>FTE Conversion</h4>
+                <p>Recognized for exceptional technical execution and system ownership resulting in direct Full-Time Employment conversion from TCS to <strong>Evernorth (Cigna)</strong>.</p>
+              </div>
+            </div>
+
+            <div class="achievement-award-card">
+              <div class="award-icon-box"><i class="fa-solid fa-user-graduate"></i></div>
+              <div class="award-details">
+                <h4>Academic Scholarship Recipient</h4>
+                <p>Awarded institutional academic merit scholarship for maintaining top percentile performance throughout undergraduate engineering (9.2 / 10.0 CGPA).</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         13. CONTACT & CONNECT SECTION
+         ========================================================================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Get In Touch</span>
+          </div>
+          <h2 class="section-title">Let's Build Something Scalable</h2>
+          <p class="section-subtitle">
+            Interested in distributed systems, cloud engineering, modern Angular &amp; React architectures, AI-powered applications, or challenging software engineering problems? Let's connect.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Channels Info -->
+          <div class="contact-info-card">
+            <p class="contact-lead">
+              I am open to Senior Engineering, Staff Engineering, and Cloud/AI Architecture roles across high-growth product companies and FAANG/MAANG organizations.
+            </p>
+
+            <div class="contact-method-list">
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div>
+                  <div class="contact-method-label">Direct Email</div>
+                  <div class="contact-method-val">
+                    <a href="mailto:medaprashanthgupta@gmail.com" style="color:var(--text-bright)">medaprashanthgupta@gmail.com</a>
+                    <button class="copy-email-btn" id="copy-email-btn" title="Copy Email to Clipboard">
+                      <i class="fa-regular fa-copy"></i> Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div>
+                  <div class="contact-method-label">Phone</div>
+                  <div class="contact-method-val">+91 7780399763</div>
+                </div>
+              </div>
+
+              <div class="contact-method-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <div>
+                  <div class="contact-method-label">Location</div>
+                  <div class="contact-method-val">Hyderabad, India</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Social Links (Commented Placeholders) -->
+            <div class="social-links-row">
+              <!-- LINKEDIN URL PLACEHOLDER: Update href below with exact profile URL if desired -->
+              <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Connect on LinkedIn">
+                <i class="fa-brands fa-linkedin" style="color:#0a66c2"></i>
+                <span>LinkedIn</span>
+              </a>
+
+              <!-- GITHUB URL PLACEHOLDER: Update href below with exact profile URL if desired -->
+              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Inspect GitHub Repositories">
+                <i class="fa-brands fa-github"></i>
+                <span>GitHub</span>
+              </a>
+
+              <!-- RESUME DOWNLOAD LINK -->
+              <a href="resume.pdf" target="_blank" rel="noopener noreferrer" class="social-btn" title="Download Resume PDF">
+                <i class="fa-solid fa-file-pdf" style="color:var(--accent-rose)"></i>
+                <span>Resume</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form with Client-Side Validation & Feedback -->
+          <div class="contact-form-card">
+            <form id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Full Name *</label>
+                <input type="text" id="contact-name" class="form-input" placeholder="e.g. Alex Henderson" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address *</label>
+                <input type="email" id="contact-email" class="form-input" placeholder="alex@company.com" required />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject" class="form-label">Subject</label>
+                <input type="text" id="contact-subject" class="form-input" placeholder="Engineering Opportunity / Collaboration" />
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Message *</label>
+                <textarea id="contact-message" class="form-textarea" placeholder="Hello Prashanth, I'd like to discuss..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 14px;">
+                <i class="fa-solid fa-paper-plane"></i>
+                <span>Send Message</span>
+              </button>
+
+              <div class="form-feedback" id="form-feedback"></div>
+              <!-- NOTE: To connect a live backend or serverless form handler, attach an action URL or AWS API Gateway endpoint to this form. -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       14. FOOTER & BACK TO TOP
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Meda Prashanth Kumar</h3>
+          <p>Senior Software Engineer • Full-Stack (Angular / React / Node.js) • Cloud &amp; Distributed Systems • GenAI</p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer Navigation">
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#ai-engineering">AI Engineering</a>
+          <a href="#architecture">Architecture</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Meda Prashanth Kumar. Built with clean Vanilla Web Technologies.</div>
+        <div>Hyderabad, India • IST (UTC+05:30)</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top" aria-label="Back to Top" title="Scroll to Top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- ==========================================================================
+       15. VANILLA JAVASCRIPT (INTERACTIVE LOGIC, CANVAS & METRICS)
+       ========================================================================== -->
+  <script>
+    /**
+     * Meda Prashanth Kumar Portfolio - Interactive Controller
+     * High performance, dependency-free vanilla JavaScript
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      initNavigation();
+      initTheme();
+      initHeroCanvas();
+      initCounters();
+      initSkillsFilter();
+      initAccordions();
+      initPipelineInteractive();
+      initArchitectureInspector();
+      initContactForm();
+      initCopyEmail();
+    });
+
+    /* ==========================================================================
+       A. NAVIGATION & SMOOTH SCROLLING & ACTIVE SECTION HIGHLIGHTING
+       ========================================================================== */
+    function initNavigation() {
+      const navbar = document.getElementById('navbar');
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileDrawer = document.getElementById('mobile-drawer');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+      const backToTopBtn = document.getElementById('back-to-top');
+      const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+      const sections = document.querySelectorAll('section[id]');
+
+      // Mobile Menu Toggle
+      mobileBtn.addEventListener('click', () => {
+        mobileBtn.classList.toggle('open');
+        mobileDrawer.classList.toggle('open');
+        document.body.style.overflow = mobileDrawer.classList.contains('open') ? 'hidden' : '';
+      });
+
+      // Close mobile drawer on link click
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileBtn.classList.remove('open');
+          mobileDrawer.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      // Scroll Spy & Back to Top visibility
+      window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+
+        // Navbar dynamic border style
+        if (scrollY > 50) {
+          navbar.style.borderBottomColor = 'var(--border-accent)';
+          backToTopBtn.classList.add('visible');
+        } else {
+          navbar.style.borderBottomColor = 'var(--border-subtle)';
+          backToTopBtn.classList.remove('visible');
+        }
+
+        // Active Link Detection
+        let currentSectionId = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          const sectionHeight = section.offsetHeight;
+          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            currentSectionId = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+          }
+        });
+      }, { passive: true });
+
+      // Back to Top Click
+      backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+    /* ==========================================================================
+       B. THEME TOGGLE (DARK / LIGHT WITH SYSTEM PERSISTENCE)
+       ========================================================================== */
+    function initTheme() {
+      const toggleBtn = document.getElementById('theme-toggle-btn');
+      const icon = document.getElementById('theme-icon');
+      
+      const savedTheme = localStorage.getItem('mpk-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+
+      toggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('mpk-theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+
+      function updateThemeIcon(theme) {
+        if (theme === 'light') {
+          icon.className = 'fa-solid fa-sun';
+          icon.style.color = '#f59e0b';
+        } else {
+          icon.className = 'fa-solid fa-moon';
+          icon.style.color = '#38bdf8';
+        }
+      }
+    }
+
+    /* ==========================================================================
+       C. HERO CANVAS - DISTRIBUTED TOPOLOGY & NETWORK PARTICLES
+       ========================================================================== */
+    function initHeroCanvas() {
+      const canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return;
+      }
+
+      const ctx = canvas.getContext('2d');
+      let width, height;
+      let particles = [];
+
+      function resize() {
+        width = canvas.width = canvas.offsetWidth;
+        height = canvas.height = canvas.offsetHeight;
+        initNodes();
+      }
+
+      function initNodes() {
+        particles = [];
+        const count = Math.min(Math.floor((width * height) / 14000), 55);
+        for (let i = 0; i < count; i++) {
+          particles.push({
+            x: Math.random() * width,
+            y: Math.random() * height,
+            vx: (Math.random() - 0.5) * 0.45,
+            vy: (Math.random() - 0.5) * 0.45,
+            radius: Math.random() * 2 + 1.2,
+            type: Math.random() > 0.8 ? 'cloud' : (Math.random() > 0.6 ? 'react' : 'node')
+          });
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, width, height);
+
+        const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+
+        // Draw connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 130) {
+              const alpha = (1 - dist / 130) * (isLight ? 0.22 : 0.18);
+              ctx.strokeStyle = isLight ? `rgba(2, 132, 199, ${alpha})` : `rgba(56, 189, 248, ${alpha})`;
+              ctx.lineWidth = 0.8;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+
+        // Draw nodes
+        particles.forEach(p => {
+          p.x += p.vx;
+          p.y += p.vy;
+
+          if (p.x < 0 || p.x > width) p.vx *= -1;
+          if (p.y < 0 || p.y > height) p.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+          if (p.type === 'cloud') {
+            ctx.fillStyle = isLight ? '#7c3aed' : '#c084fc';
+          } else if (p.type === 'react') {
+            ctx.fillStyle = isLight ? '#0284c7' : '#00d8ff';
+          } else {
+            ctx.fillStyle = isLight ? '#2563eb' : '#38bdf8';
+          }
+          ctx.fill();
+        });
+
+        requestAnimationFrame(draw);
+      }
+
+      window.addEventListener('resize', resize, { passive: true });
+      resize();
+      draw();
+    }
+
+    /* ==========================================================================
+       D. ANIMATED METRICS COUNTERS
+       ========================================================================== */
+    function initCounters() {
+      const counters = document.querySelectorAll('.counter');
+      let animated = false;
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !animated) {
+            animated = true;
+            counters.forEach(counter => {
+              const target = parseFloat(counter.getAttribute('data-target'));
+              const prefix = counter.getAttribute('data-prefix') || '';
+              const suffix = counter.getAttribute('data-suffix') || '';
+              const isDecimal = target % 1 !== 0;
+
+              const duration = 1600;
+              const startTime = performance.now();
+
+              function updateNumber(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                const currentVal = easeProgress * target;
+
+                counter.textContent = prefix + (isDecimal ? currentVal.toFixed(1) : Math.floor(currentVal)) + suffix;
+
+                if (progress < 1) {
+                  requestAnimationFrame(updateNumber);
+                } else {
+                  counter.textContent = prefix + target + suffix;
+                }
+              }
+
+              requestAnimationFrame(updateNumber);
+            });
+          }
+        });
+      }, { threshold: 0.25 });
+
+      const metricsSection = document.getElementById('metrics');
+      if (metricsSection) observer.observe(metricsSection);
+    }
+
+    /* ==========================================================================
+       E. INTERACTIVE SKILLS FILTERING
+       ========================================================================== */
+    function initSkillsFilter() {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const skillCards = document.querySelectorAll('.skill-cat-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+
+          const selectedCategory = btn.getAttribute('data-category');
+
+          skillCards.forEach(card => {
+            const cardCat = card.getAttribute('data-cat');
+            if (selectedCategory === 'all' || cardCat === selectedCategory) {
+              card.style.display = 'block';
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    /* ==========================================================================
+       F. ACCORDION (ENGINEERING CHALLENGES)
+       ========================================================================== */
+    function initAccordions() {
+      const triggers = document.querySelectorAll('.accordion-trigger');
+      triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const content = trigger.nextElementSibling;
+          const isOpen = trigger.classList.contains('active');
+
+          if (isOpen) {
+            trigger.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            content.style.maxHeight = null;
+            content.classList.remove('open');
+          } else {
+            trigger.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+          }
+        });
+      });
+    }
+
+    /* ==========================================================================
+       G. AI PIPELINE INTERACTIVE STAGE EXPLORER
+       ========================================================================== */
+    function initPipelineInteractive() {
+      const nodes = document.querySelectorAll('.pipeline-node');
+      const badge = document.getElementById('pipe-detail-badge');
+      const title = document.getElementById('pipe-detail-title');
+      const desc = document.getElementById('pipe-detail-desc');
+
+      nodes.forEach(node => {
+        node.addEventListener('click', () => {
+          nodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+
+          const nodeTitle = node.getAttribute('data-title');
+          const nodeTech = node.getAttribute('data-tech');
+          const nodeDesc = node.getAttribute('data-desc');
+
+          badge.textContent = `Tech: ${nodeTech}`;
+          title.textContent = nodeTitle;
+          desc.textContent = nodeDesc;
+        });
+      });
+    }
+
+    /* ==========================================================================
+       H. INTERACTIVE SYSTEM ARCHITECTURE INSPECTOR
+       ========================================================================== */
+    function initArchitectureInspector() {
+      const archNodes = document.querySelectorAll('.arch-node');
+      const inspectTitle = document.getElementById('inspect-title');
+      const inspectDesc = document.getElementById('inspect-desc');
+      const inspectPoints = document.getElementById('inspect-points');
+
+      const nodeData = {
+        client: {
+          title: "Modern Frontend (Angular & React SPA)",
+          icon: "fa-brands fa-react",
+          desc: "High-performance Single Page Applications built with Angular (v12–v19) and React, utilizing RxJS reactive streams, reusable component patterns, and high-density AG Grid tables. Optimized for rapid claims validation, client-side caching, and sub-second interaction speed.",
+          points: [
+            "RxJS state pipeline and React state hooks preventing unnecessary component re-renders.",
+            "Lazy-loaded route modules delivering 15–20% page-load performance gains.",
+            "Human-in-the-loop editable grid for real-time OCR extraction auditing."
+          ]
+        },
+        gateway: {
+          title: "AWS API Gateway (Ingress & Throttling)",
+          icon: "fa-solid fa-door-open",
+          desc: "Entry point managing API traffic, request validation, rate limiting, and SSL termination. Routes requests securely to targeted serverless microservices.",
+          points: [
+            "Protects backend resources through built-in throttling and DDoS mitigation.",
+            "Validates JSON schemas at the perimeter before invoking Lambda compute.",
+            "CORS and custom API domain routing with low latency."
+          ]
+        },
+        auth: {
+          title: "OAuth 2.0 & Okta RBAC (Security Boundary)",
+          icon: "fa-solid fa-shield-halved",
+          desc: "Zero-trust identity management enforcing token-based authentication and granular Role-Based Access Control (RBAC) across multi-tenant enterprise healthcare boundaries.",
+          points: [
+            "JWT token signature validation and automated claim scopes inspection.",
+            "Multi-tenant isolation ensuring strict healthcare compliance (HIPAA).",
+            "Service-to-service authorization without degrading overall API throughput."
+          ]
+        },
+        lambda: {
+          title: "AWS Lambda & Microservices (Serverless Compute)",
+          icon: "fa-solid fa-bolt",
+          desc: "Stateless microservices implemented in Node.js and Python FastAPI, executing OPT, OPR, and TRACE business rules with independent horizontal auto-scaling.",
+          points: [
+            "Independent autoscaling from zero to thousands of concurrent claim requests.",
+            "Minimized cold-starts through optimal memory sizing and execution layers.",
+            "Decoupled handlers ensuring fault isolation during traffic spikes."
+          ]
+        },
+        events: {
+          title: "Event-Driven Routing & Asynchronous Engine",
+          icon: "fa-solid fa-shuffle",
+          desc: "Asynchronous task routing engine decoupling raw claim ingestion, heavy OCR parsing, and claim auditor assignment to streamline analyst throughput.",
+          points: [
+            "Eliminates synchronous bottlenecks in high-volume PDF parsing batches.",
+            "Automates rule-based claim assignment to available clinical reviewers.",
+            "Dead-letter queue (DLQ) retry mechanisms ensuring zero dropped transactions."
+          ]
+        },
+        postgres: {
+          title: "PostgreSQL & MSSQL Data Tier (20M+ Records)",
+          icon: "fa-solid fa-database",
+          desc: "High-throughput transactional and analytics database tier optimized with composite B-Tree indexes, partition strategies, and efficient pagination patterns.",
+          points: [
+            "Achieved ~30% p95 query latency reduction across 20,000,000+ claim records.",
+            "pgvector integration for semantic clinical document embeddings and RAG.",
+            "Read-replica distribution for intensive audit reporting workloads."
+          ]
+        },
+        nosql: {
+          title: "DynamoDB & S3 Document Lake",
+          icon: "fa-solid fa-cubes",
+          desc: "Hybrid storage repository utilizing AWS S3 for secure raw PDF storage with pre-signed upload URLs and DynamoDB for rapid distributed key-value metadata lookups.",
+          points: [
+            "KMS encryption-at-rest for sensitive clinical PDF attachments.",
+            "Single-digit millisecond latency for metadata and session lookups.",
+            "Lifecycle policies for cost-efficient historical audit archiving."
+          ]
+        },
+        telemetry: {
+          title: "Amazon CloudWatch & SRE Incident Management",
+          icon: "fa-solid fa-chart-area",
+          desc: "Continuous end-to-end observability, structured log aggregation, error alarming, and real-time metric dashboards for rapid Sev-1/Sev-2 incident mitigation.",
+          points: [
+            "Automated alarm thresholds for latency spikes and 5xx error spikes.",
+            "Real-time distributed tracing via CloudWatch service maps.",
+            "High platform uptime backed by proactive bottleneck resolution."
+          ]
+        },
+        governance: {
+          title: "SonarQube & Checkmarx Security Gates",
+          icon: "fa-solid fa-check-double",
+          desc: "Continuous code quality and static application security testing (SAST) integrated into GitHub Actions CI/CD to maintain enterprise standard compliance.",
+          points: [
+            "Strict branch quality gates preventing code smell regressions.",
+            "Automated dependency scanning and vulnerability mitigation.",
+            "Peer architectural review rigor accelerating sprint velocity."
+          ]
+        }
+      };
+
+      archNodes.forEach(node => {
+        node.addEventListener('click', () => {
+          archNodes.forEach(n => n.classList.remove('active'));
+          node.classList.add('active');
+
+          const key = node.getAttribute('data-node');
+          const data = nodeData[key];
+          if (!data) return;
+
+          inspectTitle.innerHTML = `<i class="${data.icon}"></i> ${data.title}`;
+          inspectDesc.textContent = data.desc;
+
+          inspectPoints.innerHTML = '';
+          data.points.forEach(pt => {
+            const li = document.createElement('li');
+            li.textContent = pt;
+            inspectPoints.appendChild(li);
+          });
+        });
+      });
+    }
+
+    /* ==========================================================================
+       I. CONTACT FORM (CLIENT-SIDE VALIDATION & FEEDBACK)
+       ========================================================================== */
+    function initContactForm() {
+      const form = document.getElementById('contact-form');
+      const feedback = document.getElementById('form-feedback');
+
+      if (!form) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('contact-name').value.trim();
+        const email = document.getElementById('contact-email').value.trim();
+        const message = document.getElementById('contact-message').value.trim();
+
+        if (!name || !email || !message) {
+          feedback.className = 'form-feedback error';
+          feedback.textContent = 'Please fill out all required fields (Name, Email, Message).';
+          return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          feedback.className = 'form-feedback error';
+          feedback.textContent = 'Please enter a valid email address.';
+          return;
+        }
+
+        feedback.className = 'form-feedback success';
+        feedback.innerHTML = `<strong>Thank you, ${name}!</strong> Your message has been prepared. (Note: In this static build, email can be sent directly to <a href="mailto:medaprashanthgupta@gmail.com" style="text-decoration:underline;">medaprashanthgupta@gmail.com</a>).`;
+        form.reset();
+      });
+    }
+
+    /* ==========================================================================
+       J. COPY EMAIL TO CLIPBOARD HELPER
+       ========================================================================== */
+    function initCopyEmail() {
+      const copyBtn = document.getElementById('copy-email-btn');
+      if (!copyBtn) return;
+
+      copyBtn.addEventListener('click', () => {
+        const email = 'medaprashanthgupta@gmail.com';
+        navigator.clipboard.writeText(email).then(() => {
+          copyBtn.innerHTML = '<i class="fa-solid fa-check" style="color:var(--accent-emerald)"></i> Copied!';
+          setTimeout(() => {
+            copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+          }, 2500);
+        }).catch(() => {
+          window.location.href = `mailto:${email}`;
+        });
+      });
+    }
+  </script>
+</body>
+</html>
